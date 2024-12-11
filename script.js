@@ -42,12 +42,37 @@ Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.
 */
 
+/**
+ * Returns a random number between min and max (both included).
+ * 
+ * @param {number} min - min number
+ * @param {number} max - max number
+ * @returns {number}
+ */
+function getRndIntegr(min,max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+/**
+ * Check if a number is even
+ * 
+ * @param {number} num 
+ * @returns {boolean}
+ */
+function isEven(num){
+    if(num % 2 === 0) {
+        return true;
+    }
+    return false;
+}
+
+// PROGRAMMA PRINCIPALE
 const userEvenOrOdd = prompt("Inserisci pari o dispari");
 const userNumber = Number(prompt("Inserisci un numero fra 1 e 5"));
 const cpuNumber = Math.floor(Math.random() * 5) + 1;
 const sum = userNumber + cpuNumber;
 
-if((sum % 2 === 0 && userEvenOrOdd === 'pari') || (sum % 2 === 1 && userEvenOrOdd === 'dispari')) {
+if((isEven(sum) && userEvenOrOdd === 'pari') || (isEven(sum) === false && userEvenOrOdd === 'dispari')) {
     alert("Hai vinto");
 } else {
     alert("Hai perso");
