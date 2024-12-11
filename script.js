@@ -15,10 +15,17 @@ function isPalindrome(word) {
         reverseWord = reverseWord + word[i];
     }
     if(word === reverseWord) {
-        alert("La parola è palindroma")
+        return true;
     } else {
-        alert("La parola non è palindroma")
+        return false;
     }
 }
 
 const userWord = prompt("Inserisci una parola")
+
+const checkIsPalindrome = isPalindrome(userWord);
+ if(checkIsPalindrome) {
+    console.log("la parola è palindroma");
+ } else {
+    console.log("la parola non è palindroma");
+ }
